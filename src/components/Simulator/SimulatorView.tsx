@@ -1,3 +1,4 @@
+import "./styles.scss";
 import {
   TextField,
   Button,
@@ -7,20 +8,7 @@ import {
   CardContent,
 } from "@mui/material";
 import { formatCurrencyBRL } from "../../utils/format";
-import type { LoanResult } from "../../types/loan-calculator";
-
-interface SimulatorViewProps {
-  amount: string;
-  months: string;
-  birthDate: string;
-  result: LoanResult | null;
-  isFormValid: boolean;
-  onAmountChange: (value: string) => void;
-  onMonthsChange: (value: string) => void;
-  onBirthDateChange: (value: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
-  onClear: () => void;
-}
+import type { SimulatorViewProps } from "../../types/loan-calculator";
 
 export function SimulatorView({
   amount,
