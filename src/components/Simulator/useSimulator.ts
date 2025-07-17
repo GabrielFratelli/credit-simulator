@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { loanCalculator } from "../../utils/loan-calculator";
-import type { LoanResult } from "../../types/loan-calculator";
+import type { LoanResultProps } from "../../types/loan-calculator";
 
 export function useSimulator() {
   const [amount, setAmount] = useState("");
   const [months, setMonths] = useState("");
   const [birthDate, setBirthDate] = useState("");
-  const [result, setResult] = useState<LoanResult | null>(null);
+  const [result, setResult] = useState<LoanResultProps | null>(null);
 
   const isFormValid =
     Number(amount) > 0 && Number(months) > 0 && birthDate !== "";
