@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { loanCalculator } from "../../utils/loan-calculator";
 import type { LoanResultProps } from "../../types/loan-calculator";
+import { loanCalculator } from "../../utils/calculator/loan-calculator";
 
 export function useSimulator() {
   const [amount, setAmount] = useState("");

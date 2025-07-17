@@ -1,5 +1,6 @@
-import type { LoanInputProps, LoanResultProps } from "../types/loan-calculator"
-import { formatNumber } from "./format"
+import type { LoanInputProps, LoanResultProps } from "../../types/loan-calculator"
+import { formatNumber } from "../formats/format"
+
 
 function calculateAge(birthDate: Date, today: Date = new Date()): number {
   let age = today.getFullYear() - birthDate.getFullYear()

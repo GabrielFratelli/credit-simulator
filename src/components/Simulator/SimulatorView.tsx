@@ -6,7 +6,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { formatCurrencyBRL } from "../../utils/format";
+import { formatCurrencyBRL } from "../../utils//formats/format";
 import type { SimulatorProps } from "../../types/loan-calculator";
 
 export function SimulatorView({
