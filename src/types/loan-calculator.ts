@@ -1,21 +1,21 @@
-export interface LoanInput {
+export interface LoanInputProps {
   amount: number;
   months: number;
   birthDate: string;
 }
 
-export interface LoanResult {
+export interface LoanResultProps {
   monthlyPayment: number;
   totalPayment: number;
   interest: number;
   rateYear: number;
 }
 
-export interface SimulatorViewProps {
+export interface SimulatorProps {
   amount: string;
   months: string;
   birthDate: string;
-  result: LoanResult | null;
+  result: LoanResultProps | null;
   isFormValid: boolean;
   onAmountChange: (value: string) => void;
   onMonthsChange: (value: string) => void;

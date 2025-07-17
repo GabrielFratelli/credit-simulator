@@ -1,4 +1,3 @@
-import "./styles.scss";
 import {
   TextField,
   Button,
@@ -8,7 +7,7 @@ import {
   CardContent,
 } from "@mui/material";
 import { formatCurrencyBRL } from "../../utils/format";
-import type { SimulatorViewProps } from "../../types/loan-calculator";
+import type { SimulatorProps } from "../../types/loan-calculator";
 
 export function SimulatorView({
   amount,
@@ -21,7 +20,7 @@ export function SimulatorView({
   onBirthDateChange,
   onSubmit,
   onClear,
-}: SimulatorViewProps) {
+}: SimulatorProps) {
   return (
     <Stack
       spacing={3}

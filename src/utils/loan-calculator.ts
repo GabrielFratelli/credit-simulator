@@ -1,37 +1,40 @@
-import type { LoanInput, LoanResult } from "../types/loan-calculator"
+import type { LoanInputProps, LoanResultProps } from "../types/loan-calculator"
 
-export function loanCalculator({ amount, months, birthDate }: LoanInput): LoanResult {
-  const birth = new Date(birthDate)
-  const today = new Date()
-  let age = today.getFullYear() - birth.getFullYear()
-  const monthDiff = today.getMonth() - birth.getMonth()
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+function calculateAge(birthDate: Date, today: Date = new Date()): number {
+  let age = today.getFullYear() - birthDate.getFullYear()
+  const monthDiff = today.getMonth() - birthDate.getMonth()
+  const dayDiff = today.getDate() - birthDate.getDate()
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
     age--
   }
+  return age
+}
 
-  // Determinar taxa de juros anual baseada na idade
-  let rateYear = 0
-  if (age <= 25) rateYear = 0.05
-  else if (age >= 26 && age <= 40) rateYear = 0.03
-  else if (age >= 41 && age <= 60) rateYear = 0.02
-  else rateYear = 0.04
+function getAnnualRateByAge(age: number): number {
+  if (age <= 25) return 0.05
+  if (age <= 40) return 0.03
+  if (age <= 60) return 0.02
+  return 0.04
+}
 
-  const r = rateYear / 12 // taxa mensal
-  const n = months
-  const PV = amount
+function calculateMonthlyPayment(principal: number, monthlyRate: number, months: number): number {
+  if (monthlyRate === 0) return principal / months
+  return principal * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)))
+}
 
-  // Fórmula PMT = PV * r / (1 - (1 + r)^-n)
-  const monthlyPayment = r === 0
-    ? PV / n
-    : PV * (r / (1 - Math.pow(1 + r, -n)))
+export function loanCalculator({ amount, months, birthDate }: LoanInputProps): LoanResultProps {
+  const age = calculateAge(new Date(birthDate))
+  const annualRate = getAnnualRateByAge(age)
+  const monthlyRate = annualRate / 12
 
-  const totalPayment = monthlyPayment * n
-  const interest = totalPayment - PV
+  const monthlyPayment = calculateMonthlyPayment(amount, monthlyRate, months)
+  const totalPayment = monthlyPayment * months
+  const interest = totalPayment - amount
 
   return {
     monthlyPayment: Number(monthlyPayment.toFixed(2)),
     totalPayment: Number(totalPayment.toFixed(2)),
     interest: Number(interest.toFixed(2)),
-    rateYear: rateYear * 100 // em %
+    rateYear: Number((annualRate * 100).toFixed(2))
   }
 }
