@@ -3,7 +3,6 @@ import { loanCalculator } from './loan-calculator'
 
 describe('loanCalculator', () => {
   const mockFormatNumber = jest.spyOn(format, 'formatNumber').mockImplementation((n: number, d = 2) => Number(n.toFixed(d)))
-
   afterEach(() => {
     jest.clearAllMocks()
   })
