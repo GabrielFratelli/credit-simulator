@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/25</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.23% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/21</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -104,18 +104,37 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,11 +145,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -145,47 +177,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { LoanInputProps, LoanResultProps } from "../../types/loan-calculator"
-import { formatNumber } from "../formats/format"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { LoanInputProps, LoanResultProps } from "../../types/loan-calculator";
+import { formatNumber } from "../formats/format";
 &nbsp;
-&nbsp;
+/**
+ * Calcula a idade, comparando a data de nascimento com a data atual.
+ */
 function calculateAge(birthDate: Date, today: Date = new Date()): number {
-  let age = today.getFullYear() - birthDate.getFullYear()
-  const monthDiff = today.getMonth() - birthDate.getMonth()
-  const dayDiff = today.getDate() - birthDate.getDate()
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (monthDiff &lt; 0 || (monthDiff === 0 &amp;&amp; dayDiff &lt; 0)) {
-<span class="cstat-no" title="statement not covered" >    age--</span>
-  }
-  return age
+  const yearDiff = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  const dayDiff = today.getDate() - birthDate.getDate();
+  // Ajusta idade se ainda não fez aniversário no ano
+  return monthDiff &lt; 0 || (monthDiff === 0 &amp;&amp; dayDiff &lt; 0) ? <span class="branch-0 cbranch-no" title="branch not covered" >yearDiff - 1 </span>: yearDiff;
 }
 &nbsp;
+/**
+ * Retorna a taxa anual de acordo com a faixa etária.
+ */
 function getAnnualRateByAge(age: number): number {
-  if (age &lt;= 25) return 0.05
-  if (age &lt;= 40) return 0.03
-  if (age &lt;= 60) return 0.02
-  return 0.04
+  if (age &lt;= 25) return 0.05;
+  if (age &lt;= 40) return 0.03;
+  if (age &lt;= 60) return 0.02;
+  return 0.04;
 }
 &nbsp;
+/**
+ * Calcula o valor da parcela mensal do empréstimo.
+ * Usa a fórmula de amortização.
+ */
 function calculateMonthlyPayment(principal: number, monthlyRate: number, months: number): number {
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (monthlyRate === 0) <span class="cstat-no" title="statement not covered" >return principal / months</span>
-  return principal * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)))
+  return monthlyRate === 0
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >principal / months</span>
+    : principal * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)));
 }
 &nbsp;
-export function loanCalculator({ amount, months, birthDate }: LoanInputProps): LoanResultProps {
-  const age = calculateAge(new Date(birthDate))
-  const annualRate = getAnnualRateByAge(age)
-  const monthlyRate = annualRate / 12
+/**
+ * Função principal do simulador de empréstimo.
+ * Recebe os dados do empréstimo e retorna o resultado formatado.
+ */
+export function loanCalculator({
+  amount,
+  months,
+  birthDate,
+}: LoanInputProps): LoanResultProps {
+  const age = calculateAge(new Date(birthDate));
+  const annualRate = getAnnualRateByAge(age);
+  const monthlyRate = annualRate / 12;
 &nbsp;
-  const monthlyPayment = calculateMonthlyPayment(amount, monthlyRate, months)
-  const totalPayment = monthlyPayment * months
-  const interest = totalPayment - amount
+  const monthlyPayment = calculateMonthlyPayment(amount, monthlyRate, months);
+  const totalPayment = monthlyPayment * months;
+  const interest = totalPayment - amount;
 &nbsp;
   return {
     monthlyPayment: formatNumber(monthlyPayment),
     totalPayment: formatNumber(totalPayment),
     interest: formatNumber(interest),
-    rateYear: formatNumber((annualRate * 100))
-  }
+    rateYear: formatNumber(annualRate * 100),
+  };
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -193,7 +241,7 @@ export function loanCalculator({ amount, months, birthDate }: LoanInputProps): L
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-17T21:13:28.882Z
+                at 2025-07-19T03:18:41.373Z
             </div>
         <script src="../prettify.js"></script>
         <script>
