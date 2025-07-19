@@ -1,69 +1,38 @@
-# React + TypeScript + Vite
+## Sobre ✔️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desafio de Frontend para processo seletivo, Simulação de Crédito.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas 📎
 
-## Expanding the ESLint configuration
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React com Vite](https://react.dev/learn/build-a-react-app-from-scratch)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Sass](https://sass-lang.com/)
+- [Jest](https://testing-library.com/docs/react-testing-library/intro/)
+- [Material UI](https://mui.com/material-ui/)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Pré-requisitos 📝
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Para rodar este projeto é necessário ter instalado na sua máquina as seguintes tecnologias:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- É necessário possuir o [Node.js](https://nodejs.org/en/) instalado na máquina.
+- Também, é preciso ter um gerenciador de pacotes [Npm](https://www.npmjs.com/).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Para rodar o projeto 📌
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Escolher o emulador da sua preferência.
+2. Instale as dependências: `npm install`
+3. Startar a aplicação: `npm run dev`
+
+## Resultado 📷
+
+<h1 align="center">
+    <img src="public/assets/screenshot/default.jpeg" />
+    <img src="public/assets/screenshot/filled.jpeg" />
+    <img src="public/assets/screenshot/result-simulation.jpeg" />
+</h1>
