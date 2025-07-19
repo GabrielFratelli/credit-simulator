@@ -17,6 +17,7 @@ export interface SimulatorProps {
   birthDate: string;
   result: LoanResultProps | null;
   isFormValid: boolean;
+  isLoading: boolean;
   onAmountChange: (value: string) => void;
   onMonthsChange: (value: string) => void;
   onBirthDateChange: (value: string) => void;

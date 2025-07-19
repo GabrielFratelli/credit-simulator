@@ -11,6 +11,7 @@ export function Simulator() {
     setBirthDate,
     result,
     isFormValid,
+    isLoading,
     handleSubmit,
     handleClear,
   } = useSimulator();
@@ -22,6 +23,7 @@ export function Simulator() {
       birthDate={birthDate}
       result={result}
       isFormValid={isFormValid}
+      isLoading={isLoading}
       onAmountChange={setAmount}
       onMonthsChange={setMonths}
       onBirthDateChange={setBirthDate}
