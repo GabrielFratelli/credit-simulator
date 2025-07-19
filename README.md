@@ -32,7 +32,8 @@ Para rodar este projeto é necessário ter instalado na sua máquina as seguinte
 ## Resultado 📷
 
 <h1 align="center">
-    <img src="public/assets/screenshot/default.jpeg" />
-    <img src="public/assets/screenshot/filled.jpeg" />
-    <img src="public/assets/screenshot/result-simulation.jpeg" />
+    <img src="public/assets/screenshot/default.png" />
+    <img src="public/assets/screenshot/filled.png" />
+    <img src="public/assets/screenshot/loading.png" />
+    <img src="public/assets/screenshot/result-simulation.png" />
 </h1>
