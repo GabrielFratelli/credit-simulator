@@ -23,11 +23,12 @@ Para rodar este projeto é necessário ter instalado na sua máquina as seguinte
 - É necessário possuir o [Node.js](https://nodejs.org/en/) instalado na máquina.
 - Também, é preciso ter um gerenciador de pacotes [Npm](https://www.npmjs.com/).
 
-## Para rodar o projeto 📌
+## Para rodar o projeto e os testes unitários 📌
 
 1. Escolher o emulador da sua preferência.
 2. Instale as dependências: `npm install`
 3. Startar a aplicação: `npm run dev`
+4. (Opcional) Em outra aba do terminal, rode o comando de teste unitário: `npm run test`
 
 ## Resultado 📷
 
@@ -36,4 +37,5 @@ Para rodar este projeto é necessário ter instalado na sua máquina as seguinte
     <img src="public/assets/screenshot/filled.png" />
     <img src="public/assets/screenshot/loading.png" />
     <img src="public/assets/screenshot/result-simulation.png" />
+    <img src="public/assets/screenshot/unit-test.png" />
 </h1>
